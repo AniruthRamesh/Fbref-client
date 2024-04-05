@@ -7,6 +7,14 @@
 - **Sortable Statistics**: Users can sort player statistics by season, either in ascending or descending order, with a simple toggle switch.
 - **Flexible Criteria Selection**: Interactive dropdown menus allow users to customize their search by selecting specific players, team types, competition scopes, and formats.
 
+## Usage
+
+The hosted version can be accessed at https://fbref-client.netlify.app/
+
+1. Since the backend code is hosted on a free tier, if the website does not have any traffic the instance spins down automatically. If there is any activity, it will take 50 seconds for the instance to spin up back again.
+2. This is not related to the code, the API calls are optimized and the subsequent fetches will be fast.
+3. The website is not designed to be responsive.
+
 ## Introduction
 
 The FBRef Player Statistics application enables users to explore detailed football player statistics. Leveraging React and `@tanstack/react-query`, this frontend application ensures high performance.
