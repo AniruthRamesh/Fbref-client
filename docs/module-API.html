@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: API</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: API</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>This module is responsible for handling all API-related operations within the application.
+It encapsulates the logic for constructing request URLs and fetching data from the server, providing a
+simplified and centralized interface for interacting with the backend. The module is designed with future
+scalability and security enhancements in mind.</p>
+<p>Key Components:</p>
+<ul>
+<li><code>APIUrl</code>: Constructs URLs tailored to specific API actions, adapting based on the provided action and payload.
+It supports building detailed URLs for fetching player statistics. Future plans include securing and
+externalizing the base URL to enhance security and configuration in production environments.</li>
+<li><code>fetchPlayerStats</code>: An asynchronous function that fetches player statistics using URLs constructed by the
+<code>APIUrl</code> function. It simplifies the data fetching process, including error handling. Currently the implementation
+is done using a Powerful Library called React-Query, which handles Caching the api, fetching async data and storing them and much more.</li>
+</ul>
+<p>Future Enhancements:</p>
+<ul>
+<li>The handling of the <code>APIUrl</code> will be improved to ensure the base URL and other sensitive information are
+processed securely, possibly through environment variables or a secure configuration management system.</li>
+</ul>
+<p>The module's current design is focused on ease of use and maintenance, with a clear path laid out for
+enhancing its scalability and security in line with modern web development practices.</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_api.js.html">api/api.js</a>, <a href="api_api.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="module-API.html#.APIUrl"><code>module:API.APIUrl</code></a> for constructing API request URLs.</li>
+        
+            <li><a href="module-API.html#.fetchPlayerStats"><code>module:API.fetchPlayerStats</code></a> for fetching player statistics.</li>
+        
+            <li><a href="https://tanstack.com/query/latest/docs/framework/react/overview">https://tanstack.com/query/latest/docs/framework/react/overview</a> for information about the React-Query library.</li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".APIUrl"><span class="type-signature">(static) </span>APIUrl<span class="signature">(action, payload)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Constructs and returns a URL for API requests. This flexible function adapts the URL based on the action
+and payload. Currently, it supports building a detailed URL for fetching player statistics. The base URL
+is hardcoded for simplicity, with plans to secure and externalize it in production environments for future
+enhancements.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>action</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Identifies the API request type, tailoring the URL to specific needs.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>payload</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Contains parameters for constructing the request URL, applicable for certain actions.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_baseUrl.js.html">api/baseUrl.js</a>, <a href="api_baseUrl.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A specifically constructed URL for the action, defaulting to a base URL for unhandled actions.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>//Example usage for a "PlayerStats" action
+APIUrl("PlayerStats", { playerParam: "ronaldo", teamType: "club", scope: "domestic", competitionFormat: "league" });</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".fetchPlayerStats"><span class="type-signature">(async, static) </span>fetchPlayerStats<span class="signature">(param0)</span><span class="type-signature"> &rarr; {Promise.&lt;Object>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Fetches player statistics from the server using the constructed URL from the APIUrl function.
+This asynchronous function takes a destructured object as its parameter, which includes the
+player name and details necessary for the APIUrl function, constructs the URL for fetching player statistics,
+and then performs the fetch request to retrieve the data.</p>
+<p>The function throws an error if the fetch request does not complete successfully, ensuring that the
+caller can handle failed requests appropriately.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>param0</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The destructuring parameter from react-query's queryKey.</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>queryKey</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An array where the first element is ignored and the second element is an object containing playerName, teamType, scope, and competitionFormat.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_getPlayerStats.js.html">api/getPlayerStats.js</a>, <a href="api_getPlayerStats.js.html#line3">line 3</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="module-API.html#.APIUrl"><code>module:API.APIUrl</code></a> for how the function constructs the URL for fetching data.</li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The JSON response containing the player's statistics.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;Object></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-API.html">API</a></li><li><a href="module-App.html">App</a></li><li><a href="module-Components.html">Components</a></li><li><a href="module-Data.html">Data</a></li><li><a href="module-Main.html">Main</a></li><li><a href="module-Pages.html">Pages</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Thu Apr 04 2024 21:16:26 GMT-0400 (Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

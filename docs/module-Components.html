@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: Components</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: Components</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>This module consists of reusable UI components designed to facilitate the construction of the application's user interface.
+It includes components such as Dropdown for selecting from predefined options and RenderStatsRow for displaying player statistics in a tabular format.
+These components are designed with flexibility and reusability in mind, allowing them to be easily integrated across different parts of the application.</p>
+<p>The module plays a crucial role in maintaining a consistent look and feel across the application, providing a centralized location for UI components that can be enhanced and extended as needed.</p>
+<p>Future Improvements:</p>
+<ul>
+<li>Abstract Table Component: Plans are in place to abstract the current table presentation logic into a more generalized Table component.
+This component will be designed to accept any type of data, rendering it according to a common theme while still allowing for customization as required by different parts of the application.
+This abstraction aims to reduce redundancy and streamline the process of displaying tabular data, ensuring consistency and efficiency in the development of future features.</li>
+</ul>
+<p>Components:</p>
+<ul>
+<li>
+<p><code>Dropdown</code>: Renders a selectable dropdown list, allowing users to choose from a set of predefined options. It's utilized throughout the application for filtering data based on specific criteria such as player names, team types, scopes of statistics, and competition formats.</p>
+</li>
+<li>
+<p><code>RenderStatsRow</code>: Dynamically generates table rows based on sorted player statistics data. It includes conditional formatting for data presentation and an optional summary row to display aggregate statistics.
+This component exemplifies the application's data-driven approach to UI design, ensuring information is presented in a clear, concise, and visually appealing manner.</p>
+</li>
+</ul></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="components_components.js.html">components/components.js</a>, <a href="components_components.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="module-Components.html#.Dropdown"><code>module:Components.Dropdown</code></a> - for implementation details about the Dropdown component.</li>
+        
+            <li><a href="module-Components.html#.RenderStatsRow"><code>module:Components.RenderStatsRow</code></a> - for implementation details for displaying data in table format.</li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".Dropdown"><span class="type-signature">(static) </span>Dropdown<span class="signature">(props)</span><span class="type-signature"> &rarr; {React.Component}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>A Dropdown component that renders a selectable dropdown list. It is utilized throughout the application
+to offer users a consistent means of selecting from a predefined list of options, such as player names,
+team types, scopes of statistics, and competition formats.</p>
+<p>This component plays a crucial role in the user interface by providing a streamlined way to filter player
+statistics based on the selected criteria. The dropdown's options are dynamically populated based on the
+props passed to it, allowing for flexible use across different contexts within the application.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>props</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The properties passed to the Dropdown component.</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An array of options to be displayed in the dropdown. Each option is
+a string that represents a selectable item in the dropdown list.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>selectedValue</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The currently selected value in the dropdown. This should correspond
+to one of the strings in the <code>options</code> array.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onChange</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A callback function that is called when the selected option in the dropdown
+changes. It receives the new selected value as its only argument.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="components_Dropdown.jsx.html">components/Dropdown.jsx</a>, <a href="components_Dropdown.jsx.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A React component that renders a styled dropdown list.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">React.Component</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>// In a parent component, such as Home, Dropdown is used like this:
+&lt;Dropdown
+  options={players} // players = ["Cristiano Ronaldo", "Lionel Messi"]
+  selectedValue={selectedPlayer} // selectedPlayer is state managed by the parent component
+  onChange={setSelectedPlayer} // setSelectedPlayer updates the parent component's state
+/></code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".RenderStatsRow"><span class="type-signature">(static) </span>RenderStatsRow<span class="signature">(params)</span><span class="type-signature"> &rarr; {Array.&lt;React.Component>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Renders table rows displaying player statistics based on sorted and summarized data. This component is a
+key part of the application's data presentation layer, transforming structured statistical data into a
+user-friendly tabular format. Each row represents an individual player's season statistics, with a
+summary row optionally appended to provide aggregate data.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>params</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The parameters passed to the RenderStatsRow component.</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>sortedData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Object></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An array of objects, each representing a player's statistics for a
+single season. This data is pre-sorted based on a selected criterion (e.g., ascending or descending by seasons)
+in the parent component before being passed to RenderStatsRow.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An object containing additional data related to the player statistics,
+including a <code>StatsSummary</code> object that provides aggregate statistics across all listed seasons.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="components_RenderPlayerStats.jsx.html">components/RenderPlayerStats.jsx</a>, <a href="components_RenderPlayerStats.jsx.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>An array of React component instances, each rendering a table row
+(<code>&lt;tr&gt;</code>) filled with player statistics. Includes conditional formatting (e.g., coloring) based on
+certain data conditions, such as highlighting zeroes in red.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;React.Component></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-API.html">API</a></li><li><a href="module-App.html">App</a></li><li><a href="module-Components.html">Components</a></li><li><a href="module-Data.html">Data</a></li><li><a href="module-Main.html">Main</a></li><li><a href="module-Pages.html">Pages</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Thu Apr 04 2024 21:16:26 GMT-0400 (Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
