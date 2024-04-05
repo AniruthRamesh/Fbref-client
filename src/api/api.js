@@ -10,9 +10,6 @@
  *   `APIUrl` function. It simplifies the data fetching process, including error handling. Currently the implementation
  *    is done using a Library called React-Query, which handles Caching the api, fetching async data and storing them and much more.
  * 
- * Future Enhancements:
- * - The handling of the `APIUrl` will be improved to ensure the base URL and other sensitive information are 
- *   processed securely, possibly through environment variables or a secure configuration management system.
  * 
  * @see {@link module:API.APIUrl} for constructing API request URLs.
  * @see {@link module:API.fetchPlayerStats} for fetching player statistics.
